@@ -13,6 +13,6 @@ FROM base as build
 RUN ./mvnw package
 
 FROM eclipse-temurin:17-jre-jammy as production
-EXPOSE 8080
-COPY --from=build /app/target/spring-petclinic-*.jar /spring-petclinic.jar
-CMD ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "/spring-petclinic.jar"]
+EXPOSE 8080 ##meta data for communication between the person who built the image(me) and the person who runs the container(also me)
+COPY --from=build /app/target/* /.
+CMD ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "/docker-playground.jar"]

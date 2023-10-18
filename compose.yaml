@@ -19,7 +19,7 @@ services:
     image: mysql:8.0
     # DON'T NEED TO SPECIFY NETWORK (COMPOSE ADD ALL SERVICES TO THE SAME NETWORK)
 #    networks:
-#      - pet-net
+#      - net
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD=true
       - MYSQL_USER=user
